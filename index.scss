@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Poppins';
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+
+.main {
+    display: flex;
+    align-items: center;
+    background: rgb(175,104,234);
+    background: linear-gradient(180deg, rgba(175,104,234,1) 0%, rgba(101,99,232,1) 100%);
+    width: 100vw;
+    height: 100vh;
+    &__box {
+        margin: 0 auto;
+        width: 64vw;
+        min-height: 66vh;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        &--block {
+            width: 100%;
+        }
+    }
+}
+
+.blockl {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &__woman {
+        position: absolute;
+        left: -80px;
+        top: 60px;
+        z-index: 0;
+    }
+    &__bg {
+        position: absolute;
+        width: 200%;
+        top: -300px;
+        left: -590px;
+    }
+    &__cube {
+        position: absolute;
+        left: 145px;
+        top: 320px;
+        z-index: 1;
+        animation: cube 1000ms infinite ease-in-out;
+    }
+}
+
+
+@keyframes cube {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.blockr {
+    overflow: hidden;
+    margin: 50px;
+    & h1 {
+        font-weight: 600;
+        color: hsl(237, 12%, 33%);
+        margin-bottom: 20px;
+    }
+    &__question {
+        position: relative;
+        color: hsl(240, 6%, 50%);
+        padding-right: 50px;
+        & h2 {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        & button {
+            all: unset;
+            margin-right: 15px;
+        }
+        &--header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+        &--content {
+            height: 0;
+            font-size: 14px;
+            margin-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+    }
+    &__underline {
+        width: 100%;
+        height: 2px;
+        background: hsl(240, 6%, 50%);
+    }
+}
+
+.active {
+    & p {
+        height: 40px;
+    }
+    & .blockr__question--header {
+        & h2 {
+            color: hsl(237, 12%, 33%);
+            font-weight: 600;
+        }
+        & button {
+            transform: rotateZ(180deg);
+            animation: rotate 300ms;
+        }
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotateZ(0);
+    }
+    to {
+        transform: rotateZ(180deg);
+    }
+}
